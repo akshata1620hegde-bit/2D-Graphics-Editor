@@ -10,14 +10,15 @@ int main()
 
     do
     {
-        printf("\n===== 2D Graphics Editor =====\n");
         printf("1. Draw Rectangle\n");
         printf("2. Draw Line\n");
         printf("3. Draw Triangle\n");
         printf("4. Draw Circle\n");
         printf("5. Display Picture\n");
         printf("6. Clear Picture\n");
-        printf("7. Exit\n");
+        printf("7. Delete Rectangle\n");
+        printf("8. Modify Rectangle\n");
+        printf("9. Exit\n");
         printf("Enter choice: ");
         scanf("%d", &choice);
 
@@ -49,14 +50,25 @@ int main()
             break;
 
         case 7:
-            printf("Exiting...\n");
+            deleteRectangle(canvas, 2, 2, 10, 5);
+            printf("Rectangle deleted!\n");
             break;
 
+        case 8:
+            modifyRectangle(canvas,
+                            2, 2, 10, 5,
+                            8, 8, 12, 4);
+            printf("Rectangle modified!\n");
+            break;
+
+        case 9:
+            printf("Exiting...\n");
+            break;
         default:
             printf("Invalid choice!\n");
         }
 
-    } while (choice != 7);
+    } while (choice != 9);
 
     return 0;
 }

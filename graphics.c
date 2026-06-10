@@ -103,3 +103,31 @@ void drawCircle(char canvas[ROWS][COLS],
         }
     }
 }
+void deleteRectangle(char canvas[ROWS][COLS],
+                     int row, int col,
+                     int width, int height)
+{
+    int i, j;
+
+    for (i = row; i < row + height && i < ROWS; i++)
+    {
+        for (j = col; j < col + width && j < COLS; j++)
+        {
+            canvas[i][j] = '_';
+        }
+    }
+}
+void modifyRectangle(char canvas[ROWS][COLS],
+                     int oldRow, int oldCol,
+                     int oldWidth, int oldHeight,
+                     int newRow, int newCol,
+                     int newWidth, int newHeight)
+{
+    deleteRectangle(canvas,
+                    oldRow, oldCol,
+                    oldWidth, oldHeight);
+
+    drawRectangle(canvas,
+                  newRow, newCol,
+                  newWidth, newHeight);
+}

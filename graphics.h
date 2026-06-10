@@ -23,5 +23,13 @@ void drawCircle(char canvas[ROWS][COLS],
                 int centerRow,
                 int centerCol,
                 int radius);
+void deleteRectangle(char canvas[ROWS][COLS],
+                     int row, int col,
+                     int width, int height);
 
+void modifyRectangle(char canvas[ROWS][COLS],
+                     int oldRow, int oldCol,
+                     int oldWidth, int oldHeight,
+                     int newRow, int newCol,
+                     int newWidth, int newHeight);
 #endif
